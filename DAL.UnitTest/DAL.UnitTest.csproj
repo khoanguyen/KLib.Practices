@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A5EFEE2-A62D-447F-BF1B-D36B4275FE40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL.UnitTest</RootNamespace>
+    <AssemblyName>DAL.UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataContextTest.cs" />
+    <Compile Include="DbContextModel\KLibDBTestDbContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KLibDBTestDbContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContextModel\KLibDBTestDbContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KLibDBTestDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContextModel\KLibDBTestDbContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KLibDBTestDbContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DbContextGenericRepositoryTest.cs" />
+    <Compile Include="DbContextModel\KLibDBTestEntities.cs" />
+    <Compile Include="DbContextModel\Note.cs">
+      <DependentUpon>KLibDBTestDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbContextModel\User.cs">
+      <DependentUpon>KLibDBTestDbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DependencyInjection\DataContextModule.cs" />
+    <Compile Include="Init\Init.cs" />
+    <Compile Include="ObjectContextRepositoryTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="DbContextModel\KLibDBTestDbContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KLibDBTestDbContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DbContextModel\KLibDBTestDbContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KLibDBTestDbContext.edmx</DependentUpon>
+      <LastGenOutput>KLibDBTestDbContext.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DbContextModel\KLibDBTestDbContext.edmx.diagram">
+      <DependentUpon>KLibDBTestDbContext.edmx</DependentUpon>
+    </None>
+    <None Include="DbContextModel\KLibDBTestDbContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KLibDBTestDbContext.edmx</DependentUpon>
+      <LastGenOutput>KLibDBTestDbContext.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KLib.Practices.Common\KLib.Practices.Common.csproj">
+      <Project>{8e3e6635-4787-4b11-a6f4-08b0c84c1b93}</Project>
+      <Name>KLib.Practices.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KLib.Practices.DAL\KLib.Practices.DAL.csproj">
+      <Project>{3D5B25AD-ECAA-4D58-AB47-FAA01CE2548E}</Project>
+      <Name>KLib.Practices.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KLib.Practices.NinjectSuite\KLib.Practices.NinjectSuite.csproj">
+      <Project>{32A3C075-427D-445F-A19B-939950AFDE1E}</Project>
+      <Name>KLib.Practices.NinjectSuite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KLib.Practices.UnitTesting\KLib.Practices.UnitTesting.csproj">
+      <Project>{a7a8fbd5-e2fd-46ab-8d67-e2a675185209}</Project>
+      <Name>KLib.Practices.UnitTesting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\Clear.sql" />
+    <EmbeddedResource Include="Scripts\Init.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ObjectContextModel\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

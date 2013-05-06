@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Notes]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [UserId] INT NOT NULL, 
+    [Text] NVARCHAR(MAX) NULL, 
+    [CreatedDate] DATETIME NULL, 
+    [Title] NVARCHAR(500) NULL, 
+    [Status] CHAR NULL DEFAULT 'A',
+	CONSTRAINT FK_Notes_Users FOREIGN KEY(UserId) REFERENCES Users(Id) 
+)

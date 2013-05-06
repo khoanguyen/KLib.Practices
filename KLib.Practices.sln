@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KLib.Practices.DAL", "KLib.Practices.DAL\KLib.Practices.DAL.csproj", "{3D5B25AD-ECAA-4D58-AB47-FAA01CE2548E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{F27B0236-9F3B-4B25-BDE0-D8D80C0479D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL.UnitTest", "DAL.UnitTest\DAL.UnitTest.csproj", "{5A5EFEE2-A62D-447F-BF1B-D36B4275FE40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KLib.Practices.Common", "KLib.Practices.Common\KLib.Practices.Common.csproj", "{8E3E6635-4787-4B11-A6F4-08B0C84C1B93}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TestDatabase", "TestDatabase\TestDatabase.sqlproj", "{FA65FFBD-FDF4-460A-861C-1D8AAE0E3A97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KLib.Practices.UnitTesting", "KLib.Practices.UnitTesting\KLib.Practices.UnitTesting.csproj", "{A7A8FBD5-E2FD-46AB-8D67-E2A675185209}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{096EEAE2-AB2E-4938-B6FE-4077468FE59B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KLib.Practices.NinjectSuite", "KLib.Practices.NinjectSuite\KLib.Practices.NinjectSuite.csproj", "{32A3C075-427D-445F-A19B-939950AFDE1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D5B25AD-ECAA-4D58-AB47-FAA01CE2548E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D5B25AD-ECAA-4D58-AB47-FAA01CE2548E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D5B25AD-ECAA-4D58-AB47-FAA01CE2548E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D5B25AD-ECAA-4D58-AB47-FAA01CE2548E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A5EFEE2-A62D-447F-BF1B-D36B4275FE40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A5EFEE2-A62D-447F-BF1B-D36B4275FE40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A5EFEE2-A62D-447F-BF1B-D36B4275FE40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A5EFEE2-A62D-447F-BF1B-D36B4275FE40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E3E6635-4787-4B11-A6F4-08B0C84C1B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E3E6635-4787-4B11-A6F4-08B0C84C1B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E3E6635-4787-4B11-A6F4-08B0C84C1B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E3E6635-4787-4B11-A6F4-08B0C84C1B93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA65FFBD-FDF4-460A-861C-1D8AAE0E3A97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA65FFBD-FDF4-460A-861C-1D8AAE0E3A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA65FFBD-FDF4-460A-861C-1D8AAE0E3A97}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FA65FFBD-FDF4-460A-861C-1D8AAE0E3A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA65FFBD-FDF4-460A-861C-1D8AAE0E3A97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA65FFBD-FDF4-460A-861C-1D8AAE0E3A97}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A7A8FBD5-E2FD-46AB-8D67-E2A675185209}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A8FBD5-E2FD-46AB-8D67-E2A675185209}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A8FBD5-E2FD-46AB-8D67-E2A675185209}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A8FBD5-E2FD-46AB-8D67-E2A675185209}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32A3C075-427D-445F-A19B-939950AFDE1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32A3C075-427D-445F-A19B-939950AFDE1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32A3C075-427D-445F-A19B-939950AFDE1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32A3C075-427D-445F-A19B-939950AFDE1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5A5EFEE2-A62D-447F-BF1B-D36B4275FE40} = {F27B0236-9F3B-4B25-BDE0-D8D80C0479D9}
+		{FA65FFBD-FDF4-460A-861C-1D8AAE0E3A97} = {F27B0236-9F3B-4B25-BDE0-D8D80C0479D9}
+	EndGlobalSection
+EndGlobal
