@@ -52,7 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContextTest.cs" />
     <Compile Include="DbContextModel\KLibDBTestDbContext.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,7 +68,6 @@
       <DependentUpon>KLibDBTestDbContext.edmx</DependentUpon>
     </Compile>
     <Compile Include="DbContextGenericRepositoryTest.cs" />
-    <Compile Include="DbContextModel\KLibDBTestEntities.cs" />
     <Compile Include="DbContextModel\Note.cs">
       <DependentUpon>KLibDBTestDbContext.tt</DependentUpon>
     </Compile>
