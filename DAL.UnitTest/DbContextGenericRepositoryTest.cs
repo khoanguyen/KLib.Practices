@@ -17,7 +17,7 @@ namespace DAL.UnitTest
         [ClassInitialize]
         public static void ClassInit(TestContext context)
         {
-            ContextProvider = new DefaultDataContextProvider();
+            ContextProvider = new SingleIoCDataContextProvider();
         }
 
         [TestInitialize]

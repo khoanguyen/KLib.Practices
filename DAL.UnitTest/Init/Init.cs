@@ -17,7 +17,7 @@ namespace DAL.UnitTest.Init
         [AssemblyInitialize]
         public static void AssemblyInit(TestContext context)
         {
-            DefaultDataContextProvider.UpdateProviderSingleton(provider =>
+            SingleIoCDataContextProvider.UpdateProviderSingleton(provider =>
                 {
                     provider.Kernel.Load(new[] {new DataContextModule()});
                 });

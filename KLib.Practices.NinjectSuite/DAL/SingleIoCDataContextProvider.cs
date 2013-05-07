@@ -7,7 +7,7 @@ using KLib.Practices.Common.DependencyInjection;
 
 namespace KLib.Practices.NinjectSuite.DAL
 {
-    public class DefaultDataContextProvider : DataContextProvider
+    public class SingleIoCDataContextProvider : DataContextProvider
     {
         private static NinjectIoCProvider _provider;
 
