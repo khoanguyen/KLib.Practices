@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using KLib.Practices.Common.DAL;
-using KLib.Practices.DAL;
-using KLib.Practices.NinjectSuite;
+﻿using KLib.Practices.Common.DAL;
 using Ninject.Modules;
 
 namespace DAL.UnitTest.DependencyInjection
