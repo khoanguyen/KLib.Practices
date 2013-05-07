@@ -60,6 +60,7 @@
     <Compile Include="DependencyInjection\IIoCProvider.cs" />
     <Compile Include="DependencyInjection\IIoCProviderFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTesting\TestDataManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

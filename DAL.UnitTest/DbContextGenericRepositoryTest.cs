@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Reflection;
 using DAL.UnitTest.DbContextModel;
+using KLib.Practices.Common.UnitTesting;
 using KLib.Practices.DAL;
 using KLib.Practices.NinjectSuite.DAL;
-using KLib.Practices.UnitTesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
 

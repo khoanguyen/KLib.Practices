@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="DAL\DataContextProvider.cs" />
     <Compile Include="DAL\DataContext.cs" />
-    <Compile Include="DAL\DefaultDataContextProvider.cs" />
+    <Compile Include="DAL\SingleIoCDataContextProvider.cs" />
     <Compile Include="NinjectIoCProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

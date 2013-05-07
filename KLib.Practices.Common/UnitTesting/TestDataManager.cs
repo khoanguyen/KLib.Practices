@@ -3,7 +3,7 @@ using System.Data.Entity;
 using System.IO;
 using System.Reflection;
 
-namespace KLib.Practices.UnitTesting
+namespace KLib.Practices.Common.UnitTesting
 {
     public class TestDataManager<TContext>
         where TContext : DbContext

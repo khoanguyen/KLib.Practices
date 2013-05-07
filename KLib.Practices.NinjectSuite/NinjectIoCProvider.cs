@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using KLib.Practices.Common.DependencyInjection;
 using Ninject;
-using Ninject.Modules;
 using Ninject.Parameters;
 
 namespace KLib.Practices.NinjectSuite

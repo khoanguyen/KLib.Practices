@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using KLib.Practices.Common.DAL;
+﻿using KLib.Practices.Common.DAL;
 using KLib.Practices.DAL;
 
 namespace KLib.Practices.NinjectSuite.DAL

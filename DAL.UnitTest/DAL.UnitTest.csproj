@@ -114,10 +114,6 @@
       <Project>{32A3C075-427D-445F-A19B-939950AFDE1E}</Project>
       <Name>KLib.Practices.NinjectSuite</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KLib.Practices.UnitTesting\KLib.Practices.UnitTesting.csproj">
-      <Project>{a7a8fbd5-e2fd-46ab-8d67-e2a675185209}</Project>
-      <Name>KLib.Practices.UnitTesting</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Scripts\Clear.sql" />

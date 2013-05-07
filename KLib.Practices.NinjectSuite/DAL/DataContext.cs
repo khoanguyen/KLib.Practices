@@ -4,7 +4,6 @@ using System.Data.Entity;
 using System.Data.Objects;
 using System.Linq;
 using KLib.Practices.Common.DAL;
-using KLib.Practices.DAL;
 
 namespace KLib.Practices.NinjectSuite.DAL
 {
