@@ -5,7 +5,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace KLib.Practices.DAL.Strategies
+namespace KLib.Practices.Common.DAL.Strategies
 {
     internal sealed class DbContextDataStrategy<TEntity> : DataStrategy<TEntity>
         where TEntity : class
@@ -62,7 +62,7 @@ namespace KLib.Practices.DAL.Strategies
             }
         }
 
-        public override void Replace(TEntity entity)
+        public override void ReplaceWith(TEntity entity)
         {            
             var entityEntry = GetEntrywithAttach(entity);
             entityEntry.State = System.Data.EntityState.Modified;

@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -43,12 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppService\IMarshalService.cs" />
+    <Compile Include="AppService\MarshalService.cs" />
+    <Compile Include="DAL\EntityRepositoryBase.cs" />
+    <Compile Include="DAL\GenericRepository.cs" />
+    <Compile Include="DAL\IDataContext.cs" />
+    <Compile Include="DAL\IDataContextProvider.cs" />
+    <Compile Include="DAL\IEntityRepository.cs" />
+    <Compile Include="DAL\QueryParameter.cs" />
+    <Compile Include="DAL\Strategies\DataStrategy.cs" />
+    <Compile Include="DAL\Strategies\DbContextDataStrategy.cs" />
+    <Compile Include="DAL\Strategies\ObjectContextDataStrategy.cs" />
     <Compile Include="DependencyInjection\IIoCProvider.cs" />
     <Compile Include="DependencyInjection\IIoCProviderFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

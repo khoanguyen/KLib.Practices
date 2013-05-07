@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using KLib.Practices.DAL;
 
-namespace KLib.Practices.DAL
+namespace KLib.Practices.Common.DAL
 {
     public class GenericRepository<TContext, TEntity> : EntityRepositoryBase<TContext, TEntity>
         where TEntity : class

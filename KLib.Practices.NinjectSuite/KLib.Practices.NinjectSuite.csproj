@@ -64,10 +64,6 @@
       <Project>{8e3e6635-4787-4b11-a6f4-08b0c84c1b93}</Project>
       <Name>KLib.Practices.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KLib.Practices.DAL\KLib.Practices.DAL.csproj">
-      <Project>{3d5b25ad-ecaa-4d58-ab47-faa01ce2548e}</Project>
-      <Name>KLib.Practices.DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

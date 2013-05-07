@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Reflection;
-using System.Threading;
 using DAL.UnitTest.DbContextModel;
-using DAL.UnitTest.DependencyInjection;
 using KLib.Practices.DAL;
-using KLib.Practices.NinjectSuite;
 using KLib.Practices.NinjectSuite.DAL;
 using KLib.Practices.UnitTesting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -86,10 +83,12 @@ namespace DAL.UnitTest
                 var user1 = repository.FindByKey(1);
                 Assert.IsNotNull(user1);
                 var user2 = repository.FindByKey(2);
-                Assert.IsNotNull(user1);
+                Assert.IsNotNull(user2);
                 var user3 = repository.FindByKey(10);
                 Assert.IsNull(user3);
             }
+
+
         }
 
         [TestMethod]
@@ -119,18 +118,80 @@ namespace DAL.UnitTest
         {
             using (var context = ContextProvider.Create())
             {
-                var noteRepo = context.GetRepository<KLibDBTestEntities, Note>();
                 var userRepo = context.GetRepository<KLibDBTestEntities, User>();
-                //var notes = noteRepo.List()
-                //                    .Where(note => note.UserId == 1);
 
-                //foreach (var note in notes) noteRepo.Delete(note);
-                //context.SaveAllChanges();
+                context.GetContext<KLibDBTestEntities>()
+                       .Database
+                       .ExecuteSqlCommand("DELETE Notes WHERE UserId={0}", 1);
+
                 userRepo.Delete(new User {Id = 1});
                 context.SaveAllChanges();
 
                 var user = userRepo.FindByKey(1);
                 Assert.IsNull(user);
+            }
+        }
+
+        [TestMethod]
+        public void TestUpdate()
+        {
+            using (var context = ContextProvider.Create())
+            {
+                var noteRepo = context.GetRepository<KLibDBTestEntities, Note>();
+
+                var note = new Note
+                    {
+                        Id = 2,
+                        Status = "D",
+                        Text = "This is the updated note",
+                        Title = "New Title",
+                        UserId = 3
+                    };
+
+                noteRepo.Update(note, new[] {"Text", "Title"});
+                context.SaveAllChanges();
+
+                using (var dbContext = new KLibDBTestEntities())
+                {
+                    var dbNote = dbContext.Notes.Find(2);
+                    Assert.AreEqual(dbNote.Id, note.Id);
+                    Assert.AreEqual(dbNote.Text, note.Text);
+                    Assert.AreEqual(dbNote.Title, note.Title);
+
+                    Assert.AreNotEqual(dbNote.Status, note.Status);
+                    Assert.AreNotEqual(dbNote.UserId, note.UserId);
+                }
+            }
+        }
+
+        [TestMethod]
+        public void TestReplace()
+        {
+            using (var context = ContextProvider.Create())
+            {
+                var noteRepo = context.GetRepository<KLibDBTestEntities, Note>();
+
+                var note = new Note
+                    {
+                        Id = 2,
+                        Status = "D",
+                        Text = "This is the updated note",
+                        Title = "New Title",
+                        UserId = 1
+                    };
+
+                noteRepo.ReplaceWith(note);
+                context.SaveAllChanges();
+
+                using (var dbContext = new KLibDBTestEntities())
+                {
+                    var dbNote = dbContext.Notes.Find(2);
+                    Assert.AreEqual(dbNote.Id, note.Id);
+                    Assert.AreEqual(dbNote.Text, note.Text);
+                    Assert.AreEqual(dbNote.Title, note.Title);
+                    Assert.AreEqual(dbNote.Status, note.Status);
+                    Assert.AreEqual(dbNote.UserId, note.UserId);
+                }
             }
         }
     }

@@ -5,7 +5,7 @@ using System.Data.Objects;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace KLib.Practices.DAL.Strategies
+namespace KLib.Practices.Common.DAL.Strategies
 {
     internal sealed class ObjectContextDataStrategy<TEntity> : DataStrategy<TEntity>
         where TEntity : class
@@ -78,7 +78,7 @@ namespace KLib.Practices.DAL.Strategies
                 entry.SetModifiedProperty(propertyName);
         }
 
-        public override void Replace(TEntity entity)
+        public override void ReplaceWith(TEntity entity)
         {
             var entry = GetEntryWithAttach(entity);
             entry.SetModified();

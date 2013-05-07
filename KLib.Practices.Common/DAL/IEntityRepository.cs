@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace KLib.Practices.DAL
+namespace KLib.Practices.Common.DAL
 {
     public interface IEntityRepository<TEntity> where TEntity : class
     {
@@ -12,13 +12,11 @@ namespace KLib.Practices.DAL
         TEntity Single(Expression<Func<TEntity, bool>> predicate);
         void AddNew(TEntity entity);
         void Delete(TEntity entity);
-        //void Delete(Expression<Func<TEntity, bool>> predicate);
         void Update(TEntity entity, IEnumerable<string> updatedProperties);
-        //void Update(Expression<Func<TEntity, bool>> predicate, TEntity changeset);
-        void Replace(TEntity entity);
+        void ReplaceWith(TEntity entity);
         int Count();
         int Count(Expression<Func<TEntity, bool>> predicate);
         long LongCount();
-        long LongCount(Expression<Func<TEntity, bool>> predicate);
+        long LongCount(Expression<Func<TEntity, bool>> predicate);       
     }
 }

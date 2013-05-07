@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using KLib.Practices.DAL;
 
-namespace KLib.Practices.DAL.Strategies
+namespace KLib.Practices.Common.DAL.Strategies
 {
     internal abstract class DataStrategy<TEntity> : IEntityRepository<TEntity>
         where TEntity : class        
@@ -25,12 +26,10 @@ namespace KLib.Practices.DAL.Strategies
         public abstract void AddNew(TEntity entity);
         public abstract void Delete(TEntity entity);
         public abstract void Update(TEntity entity, IEnumerable<string> updatedProperties);
-        public abstract void Replace(TEntity entity);
+        public abstract void ReplaceWith(TEntity entity);
         public abstract int Count();
         public abstract int Count(Expression<Func<TEntity, bool>> predicate);
         public abstract long LongCount();
-        public abstract long LongCount(Expression<Func<TEntity, bool>> predicate);
-        //public abstract void Delete(Expression<Func<TEntity, bool>> predicate);
-        //public abstract void Update(Expression<Func<TEntity, bool>> predicate, TEntity changeset);
+        public abstract long LongCount(Expression<Func<TEntity, bool>> predicate);       
     }
 }

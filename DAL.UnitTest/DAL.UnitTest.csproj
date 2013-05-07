@@ -110,10 +110,6 @@
       <Project>{8e3e6635-4787-4b11-a6f4-08b0c84c1b93}</Project>
       <Name>KLib.Practices.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KLib.Practices.DAL\KLib.Practices.DAL.csproj">
-      <Project>{3D5B25AD-ECAA-4D58-AB47-FAA01CE2548E}</Project>
-      <Name>KLib.Practices.DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\KLib.Practices.NinjectSuite\KLib.Practices.NinjectSuite.csproj">
       <Project>{32A3C075-427D-445F-A19B-939950AFDE1E}</Project>
       <Name>KLib.Practices.NinjectSuite</Name>

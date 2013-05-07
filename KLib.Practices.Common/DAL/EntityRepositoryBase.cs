@@ -4,9 +4,9 @@ using System.Data.Entity;
 using System.Data.Objects;
 using System.Linq;
 using System.Linq.Expressions;
-using KLib.Practices.DAL.Strategies;
+using KLib.Practices.Common.DAL.Strategies;
 
-namespace KLib.Practices.DAL
+namespace KLib.Practices.Common.DAL
 {
     public abstract class EntityRepositoryBase<TContext, TEntity> : IEntityRepository<TEntity>
         where TEntity : class
@@ -81,9 +81,9 @@ namespace KLib.Practices.DAL
             _strategy.Update(entity, updatedProperties);
         }
 
-        public virtual void Replace(TEntity entity)
+        public virtual void ReplaceWith(TEntity entity)
         {
-            _strategy.Replace(entity);
+            _strategy.ReplaceWith(entity);
         }
 
         public int Count()
